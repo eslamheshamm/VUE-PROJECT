@@ -14,21 +14,83 @@
         <form>
           <fieldset>
             <legend>Choose your bread</legend>
-            <input id="sourdough" name="bread" type="radio" value="sourdough" />
-            <label for="sourdough">Sourdough</label>
-            <input id="wheat" name="bread" type="radio" value="wheat" />
-            <label for="wheat">Wheat</label>
-            <input
-              id="gluten-free"
-              name="bread"
-              type="radio"
-              value="gluten-free"
-            />
-            <label for="gluten-free">Gluten-free</label>
+            <div v-for="bread in loaves" :key="bread.id">
+              <input
+                :id="bread.id"
+                name="bread"
+                type="radio"
+                :value="bread.value"
+                :checked="bread.value === currentBreadSelection"
+                @change="chooseBread"
+              />
+              <label :for="bread.id">{{ bread.label }}</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Choose your Protein</legend>
+            <div v-for="protein in proteins" :key="protein.id">
+              <input
+                :id="protein.id"
+                name="protein"
+                type="radio"
+                :value="protein.value"
+                :checked="protein.value === currentProteinSelection"
+                @change="chooseProtein"
+              />
+              <label :for="protein.id">{{ protein.label }}</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Choose your Cheese</legend>
+            <div v-for="chz in cheese" :key="chz.id">
+              <input
+                :id="chz.id"
+                name="chz"
+                type="radio"
+                :value="chz.value"
+                :checked="chz.value === currentCheeseSelection"
+                @change="chooseCheese"
+              />
+              <label :for="chz.id">{{ chz.label }}</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Choose your Condiments</legend>
+            <div v-for="condiment in condiments" :key="condiment.id">
+              <input
+                :id="condiment.id"
+                name="condiment"
+                type="radio"
+                :value="condiment.value"
+                :checked="condiment.value === currentCondimentSelection"
+                @change="chooseCondiments"
+              />
+              <label :for="condiment.id">{{ condiment.label }}</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Choose your Veggie</legend>
+            <div v-for="veggie in veggies" :key="veggie.id">
+              <input
+                :id="veggie.id"
+                name="veggie"
+                type="checkbox"
+                v-model="viggieSelection"
+                :value="veggie.value"
+              />
+              <label :for="veggie.id">{{ veggie.label }}</label>
+            </div>
           </fieldset>
         </form>
+        <ul>
+          <li>{{currentBreadSelection}}</li>
+          <li>{{currentProteinSelection}}</li>
+          <li>{{currentCheeseSelection}}</li>
+          <li>{{currentCondimentSelection}}</li>
+          <li>{{viggieSelection}}</li>
+        </ul>
       </template>
     </div>
   </body>
-  <script src="/main.js"></script>
+  <script src="main.js"></script>
 </html>
