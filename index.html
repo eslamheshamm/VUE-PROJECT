@@ -10,8 +10,24 @@
   </head>
   <body>
     <div id="app">
-      {{ message }} <br />
-      {{secMessage}}
+      <template>
+        <form>
+          <fieldset>
+            <legend>Choose your bread</legend>
+            <input id="sourdough" name="bread" type="radio" value="sourdough" />
+            <label for="sourdough">Sourdough</label>
+            <input id="wheat" name="bread" type="radio" value="wheat" />
+            <label for="wheat">Wheat</label>
+            <input
+              id="gluten-free"
+              name="bread"
+              type="radio"
+              value="gluten-free"
+            />
+            <label for="gluten-free">Gluten-free</label>
+          </fieldset>
+        </form>
+      </template>
     </div>
   </body>
   <script src="/main.js"></script>

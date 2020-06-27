@@ -1,0 +1,35 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  line-height: 1.7;
+  box-sizing: border-box;
+  font-size: 1.5rem;
+  text-align: center;
+}
+fieldset {
+  padding: 1.5rem;
+  border: solid 2px rgb(120, 120, 120);
+  display: inline-block;
+}
+label {
+  margin-right: 2rem;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-weight: 300;
+}
+label:last-child {
+  margin-right: 0;
+}
+
+legend {
+  font-size: 2rem;
+  font-weight: 900;
+  margin: 0 auto;
+}
